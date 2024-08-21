@@ -8,10 +8,10 @@ namespace CarSeller
 {
     internal class UsedCar:Car
     {
-        public double Milage { get; set; }
-        public UsedCar(string make, string model, int year, decimal price, double milage) : base(make, model, year, price)
+        public double Mileage { get; set; }
+        public UsedCar(string make, string model, int year, decimal price, double mileage) : base(make, model, year, price)
         {
-            Milage = milage;
+            Mileage = mileage;
         }
         public override string ToString()
         {

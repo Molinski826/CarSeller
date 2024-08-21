@@ -14,6 +14,8 @@ namespace CarSeller
         public int Year { get; set; }
         public decimal Price { get; set; }
 
+        public static List<Car> carList = new List<Car>();
+
         //constructor
         public Car(string make, string model, int year, decimal price)
         {
@@ -31,7 +33,26 @@ namespace CarSeller
         }
         public override string ToString()
         {
-            return $"{Make}, {Model}, {Year}, {Price}";
+            return $"{Make}, {Model}, {Year}, ${Price:F2}";
+        }
+        public static void ListCars()
+        {
+            for (int i = 0; i < carList.Count; i++)
+            {
+                System.Console.WriteLine($"{i+1}. Car: {carList[i]}");
+            }
+        }
+
+        public static void Remove(int index)
+        {
+            if (index >= 0 && index < carList.Count)
+            {
+                carList.RemoveAt(index);
+            }
+            else
+            {
+                System.Console.WriteLine("Invalid index");
+            }
         }
     }
 }
